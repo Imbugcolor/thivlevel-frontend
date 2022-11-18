@@ -81,7 +81,7 @@ function Cart() {
   }, [products])
 
   const addToCart = async (cart) => {
-    await axios.patch('/user/addcart', { cart }, {
+    await axios.patch('https://thivlevel-ecommerce-production.up.railway.app/user/addcart', { cart }, {
       headers: { Authorization: token }
     })
   }
@@ -144,7 +144,7 @@ function Cart() {
     const isPaid = true
     const total = purchase_units[0].amount.value
 
-    await axios.post('/api/payment', { cart: cart.filter(item => item.isPublished === true && item.countInStock > 0), paymentID, name, phone, address, total, method, isPaid }, {
+    await axios.post('https://thivlevel-ecommerce-production.up.railway.app/api/payment', { cart: cart.filter(item => item.isPublished === true && item.countInStock > 0), paymentID, name, phone, address, total, method, isPaid }, {
       headers: { Authorization: token }
     })
 
@@ -164,7 +164,7 @@ function Cart() {
     const isPaid = false
     const total1 = total
 
-    await axios.post('/api/paymentCOD', { cart: cart.filter(item => item.isPublished === true && item.countInStock > 0), name, phone, address, total: total1, method, isPaid }, {
+    await axios.post('https://thivlevel-ecommerce-production.up.railway.app/api/paymentCOD', { cart: cart.filter(item => item.isPublished === true && item.countInStock > 0), name, phone, address, total: total1, method, isPaid }, {
       headers: { Authorization: token }
     })
 

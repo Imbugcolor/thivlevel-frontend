@@ -14,7 +14,7 @@ function OrdersAPI(token) {
         if (token) {
             const getOrders = async () => {
                 try {                
-                    const res = await axios.get(`/api/payment?${status}&${sort}`, {
+                    const res = await axios.get(`https://thivlevel-ecommerce-production.up.railway.app/api/payment?${status}&${sort}`, {
                         headers: { Authorization: token }
                     })
                     setOrders(res.data);

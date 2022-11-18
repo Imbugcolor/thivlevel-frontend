@@ -7,7 +7,7 @@ function CategoriesAPI() {
 
     useEffect(() => {
         const getCategories = async () => {
-            const res = await axios.get('/api/category')
+            const res = await axios.get('https://thivlevel-ecommerce-production.up.railway.app/api/category')
             setCategories(res.data);
         }
         

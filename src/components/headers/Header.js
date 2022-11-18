@@ -20,7 +20,7 @@ function Header() {
     const [open, setOpen] = useState(false)
 
     const logoutUser = async () => {
-        await axios.get('/user/logout')
+        await axios.get('https://thivlevel-ecommerce-production.up.railway.app/user/logout')
         localStorage.removeItem('firstLogin')
         window.location.href = "/"
     }

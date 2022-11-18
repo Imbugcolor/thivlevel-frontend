@@ -25,7 +25,7 @@ function OrderDetails() {
 
     const handleCancelOrder = async () => {
         try {
-            await axios.patch(`/api/payment/cancel/${orderDetails._id}`, { cancel: 'Cancel' }, {
+            await axios.patch(`https://thivlevel-ecommerce-production.up.railway.app/api/payment/cancel/${orderDetails._id}`, { cancel: 'Cancel' }, {
                 headers: { Authorization: token }
             })
 

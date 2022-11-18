@@ -16,7 +16,7 @@ function Chart() {
   useEffect(() => {
     if (token) {
       const getOrder = async () => {
-        const res = await axios.get(`/api/payment`, {
+        const res = await axios.get(`https://thivlevel-ecommerce-production.up.railway.app/api/payment`, {
           headers: { Authorization: token }
         })
         setOrders(res.data)

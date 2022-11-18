@@ -18,34 +18,34 @@ function ProductsAPI() {
 
     useEffect(() => {
         const getProducts = async () => {
-            const res = await axios.get(`/api/products?${category}&${sort}&title[regex]=${search}`)
+            const res = await axios.get(`https://thivlevel-ecommerce-production.up.railway.app/api/products?${category}&${sort}&title[regex]=${search}`)
             setProducts(res.data.products)
             setResult(res.data.result)
         }
         getProducts()
 
         const getProductsAvailable = async () => {
-            const res = await axios.get(`/api/products?${category}&${sort}&title[regex]=${search}`)
+            const res = await axios.get(`https://thivlevel-ecommerce-production.up.railway.app/api/products?${category}&${sort}&title[regex]=${search}`)
             setProductsAvailable(res.data.products.filter(product => product.isPublished === true))
         }
         getProductsAvailable()
 
         const getRecommended = async () => {
-            const res = await axios.get('/api/productsHomepage?limit=8&sort=-rating')
+            const res = await axios.get('https://thivlevel-ecommerce-production.up.railway.app/api/productsHomepage?limit=8&sort=-rating')
             setRecommended(res.data.products)
         }
 
         getRecommended()
 
         const getBestSeller = async () => {
-            const res = await axios.get('/api/productsHomepage?limit=8&sort=-sold')
+            const res = await axios.get('https://thivlevel-ecommerce-production.up.railway.app/api/productsHomepage?limit=8&sort=-sold')
             setBestSeller(res.data.products)
         }
 
         getBestSeller()
 
         const getNewArrival = async () => {
-            const res = await axios.get('/api/productsHomepage?limit=8')
+            const res = await axios.get('https://thivlevel-ecommerce-production.up.railway.app/api/productsHomepage?limit=8')
             setNewArrival(res.data.products)
         }
 
@@ -57,7 +57,7 @@ function ProductsAPI() {
         let isCancelled = false;
 
         const getProducts = async () => {
-            const res = await axios.get(`/api/products?${category}&${sort}&title[regex]=${suggestions}`)
+            const res = await axios.get(`https://thivlevel-ecommerce-production.up.railway.app/api/products?${category}&${sort}&title[regex]=${suggestions}`)
             if (isCancelled) setSearchItem(res.data.products)
         }
         getProducts()

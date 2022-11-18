@@ -21,7 +21,7 @@ function AddStaff() {
   const addStaffSubmit = async (e) => {
     e.preventDefault()
     try {
-      await axios.post('/user/addstaff', { ...user }, {
+      await axios.post('https://thivlevel-ecommerce-production.up.railway.app/user/addstaff', { ...user }, {
         headers: { Authorization: token }
       })
 

@@ -76,7 +76,7 @@ function Payment({ tranSuccess, cart, codSuccess, user, total, closePayment }) {
                                 /> : <span 
                                     style={{lineHeight: '50px',
                                     fontStyle: 'italic',
-                                    color: '#444'}}><Link to={'/user/'}>Xác thực số điện thoại</Link> để thanh toán qua Paypal</span>
+                                    color: '#444'}}><Link to={'https://thivlevel-ecommerce-production.up.railway.app/user/'}>Xác thực số điện thoại</Link> để thanh toán qua Paypal</span>
                             }
                             
                             <span style={{ display: 'block', width: '100%', textAlign: 'center' }}>Or</span>

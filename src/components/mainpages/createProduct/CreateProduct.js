@@ -86,7 +86,7 @@ function CreateProduct() {
             formData.append('file', file)
 
 
-            const res = await axios.post('/api/upload', formData, {
+            const res = await axios.post('https://thivlevel-ecommerce-production.up.railway.app/api/upload', formData, {
                 headers: { 'context-type': 'multipart/form-data', Authorization: token }
             })
 
@@ -135,11 +135,11 @@ function CreateProduct() {
 
 
             if (onEdit) {
-                await axios.put(`/api/products/${product._id}`, { ...product, images, color, size }, {
+                await axios.put(`https://thivlevel-ecommerce-production.up.railway.app/api/products/${product._id}`, { ...product, images, color, size }, {
                     headers: { Authorization: token }
                 })
             } else {
-                await axios.post('/api/products', { ...product, images, color, size }, {
+                await axios.post('https://thivlevel-ecommerce-production.up.railway.app/api/products', { ...product, images, color, size }, {
                     headers: { Authorization: token }
                 })
             }

@@ -92,7 +92,7 @@ function UserInfor() {
 
     async function handleChangePassword(e) {
         try {
-            const res = await axios.patch('/user/changepassword', {
+            const res = await axios.patch('https://thivlevel-ecommerce-production.up.railway.app/user/changepassword', {
                 oldPassword: currentPassword,
                 newPassword,
                 verifyPassword
@@ -126,13 +126,13 @@ function UserInfor() {
             // Upload avatar user to database
             let form = new FormData();
             form.append('file', avt)
-            const avtRes = await axios.post('/api/uploadprofile', form, {
+            const avtRes = await axios.post('https://thivlevel-ecommerce-production.up.railway.app/api/uploadprofile', form, {
                 headers: { 'context-type': 'multipart/form-data', Authorization: token }
             })
 
             // Update profile
             const res = await axios.put(
-                '/user/updateUser',
+                'https://thivlevel-ecommerce-production.up.railway.app/user/updateUser',
                 { ...user, imageProfile: avtRes.data, username, dateOfbirth: dob, address, gender }, {
                 headers: { Authorization: token }
             })
@@ -142,7 +142,7 @@ function UserInfor() {
 
             // Update profile
             const res = await axios.put(
-                '/user/updateUser',
+                'https://thivlevel-ecommerce-production.up.railway.app/user/updateUser',
                 { ...user, username, dateOfbirth: dob, address, gender }, {
                 headers: { Authorization: token }
             })

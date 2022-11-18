@@ -9,7 +9,7 @@ const FileList = ({ files, removeFile }) => {
     const deleteFileHandler = async(_id) => {
         try {
      
-            await axios.post('/api/destroy', { public_id: _id }, {
+            await axios.post('https://thivlevel-ecommerce-production.up.railway.app/api/destroy', { public_id: _id }, {
                 headers: { Authorization: token }
             })
         

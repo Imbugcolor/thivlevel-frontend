@@ -26,7 +26,7 @@ function OrderHistory() {
     useEffect(() => {
         if (token) {
             const getHistory = async () => {
-                const res = await axios.get(`/user/history?${status}&${sort}`, {
+                const res = await axios.get(`https://thivlevel-ecommerce-production.up.railway.app/user/history?${status}&${sort}`, {
                     headers: { Authorization: token }
                 })
                 setHistory(res.data);

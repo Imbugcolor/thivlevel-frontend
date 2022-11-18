@@ -25,7 +25,7 @@ function UpdatePhoneForUser() {
     const handleSaveChangePhone = async (e) => {
         try {
 
-            await axios.patch(`/user/updatephone/`, { phone }, {
+            await axios.patch(`https://thivlevel-ecommerce-production.up.railway.app/user/updatephone/`, { phone }, {
                 headers: { Authorization: token }
             })
 

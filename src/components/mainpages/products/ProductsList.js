@@ -29,10 +29,10 @@ function ProductsList() {
 
                 setLoading(true)
 
-                const destroyImg = axios.post('/api/destroy', { public_id }, {
+                const destroyImg = axios.post('https://thivlevel-ecommerce-production.up.railway.app/api/destroy', { public_id }, {
                     headers: { Authorization: token }
                 })
-                const deleteProduct = axios.delete(`/api/products/${id}`, {
+                const deleteProduct = axios.delete(`https://thivlevel-ecommerce-production.up.railway.app/api/products/${id}`, {
                     headers: { Authorization: token }
                 })
 
@@ -51,7 +51,7 @@ function ProductsList() {
         product.isPublished = !product.isPublished
         console.log(product);
         try {
-            await axios.patch(`/api/products/${product._id}/changepublish`, { isPublished: product.isPublished }, {
+            await axios.patch(`https://thivlevel-ecommerce-production.up.railway.app/api/products/${product._id}/changepublish`, { isPublished: product.isPublished }, {
                 headers: { Authorization: token }
             })
             if (product.isPublished)

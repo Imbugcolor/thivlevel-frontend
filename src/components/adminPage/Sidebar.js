@@ -87,7 +87,7 @@ function Sidebar() {
   const [isAdmin] = state.userAPI.isAdmin
 
   const logoutUser = async () => {
-    await axios.get('/user/logout')
+    await axios.get('https://thivlevel-ecommerce-production.up.railway.app/user/logout')
 
     localStorage.removeItem('firstLogin')
 

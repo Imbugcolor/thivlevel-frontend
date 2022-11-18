@@ -28,7 +28,7 @@ function Login() {
   const loginSubmit = async (e) => {
     e.preventDefault()
     try {
-      await axios.post('/user/login', { ...user })
+      await axios.post('https://thivlevel-ecommerce-production.up.railway.app/user/login', { ...user })
 
       localStorage.setItem('firstLogin', true)
 
@@ -48,7 +48,7 @@ function Login() {
 
     try {
       const { name, email, imageUrl } = result
-      await axios.post('/user/googleauth', { name, email, imageUrl, accessToken })
+      await axios.post('https://thivlevel-ecommerce-production.up.railway.app/user/googleauth', { name, email, imageUrl, accessToken })
 
       localStorage.setItem('firstLogin', true)
 

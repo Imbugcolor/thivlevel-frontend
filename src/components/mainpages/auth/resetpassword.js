@@ -15,7 +15,7 @@ function Resetpassword() {
     const getLink = async() =>{
         try {
 
-          const res = await axios.get(`/user/resetpassword/${id}/${token}`)
+          const res = await axios.get(`https://thivlevel-ecommerce-production.up.railway.app/user/resetpassword/${id}/${token}`)
 
           res.data ? setIsValid(true) : setIsValid(false)
 
@@ -39,7 +39,7 @@ function Resetpassword() {
         autoClose: 3000
       })
 
-      await axios.patch('/user/updatenewpassword', {id, token, password})
+      await axios.patch('https://thivlevel-ecommerce-production.up.railway.app/user/updatenewpassword', {id, token, password})
 
       setIsUpdated(true)
 

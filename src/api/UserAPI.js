@@ -18,7 +18,7 @@ function UserAPI(token) {
         if (token) {
             const getUser = async () => {
                 try {
-                    const res = await axios.get('/user/infor', {
+                    const res = await axios.get('https://thivlevel-ecommerce-production.up.railway.app/user/infor', {
                         headers: { Authorization: token }
                     })
 
@@ -31,7 +31,7 @@ function UserAPI(token) {
                     {
                         const getAllUser = async () => {
                             try {
-                                const res = await axios.get('/user/alluser?role=0', {
+                                const res = await axios.get('https://thivlevel-ecommerce-production.up.railway.app/user/alluser?role=0', {
                                     headers: { Authorization: token }
                                 })
 
@@ -46,7 +46,7 @@ function UserAPI(token) {
                         
                         const getAllStaff = async () => {
                             try {
-                                const res = await axios.get('/user/alluser?role=1', {
+                                const res = await axios.get('https://thivlevel-ecommerce-production.up.railway.app/user/alluser?role=1', {
                                     headers: { Authorization: token }
                                 })
 
@@ -99,7 +99,7 @@ function UserAPI(token) {
 
         if (check) {
             setCart([...cart, { ...product, _id: product._id.slice(13) + Date.now(), color, size, quantity }])
-            await axios.patch('/user/addcart', {
+            await axios.patch('https://thivlevel-ecommerce-production.up.railway.app/user/addcart', {
                 cart: [...cart, { ...product, _id: product._id.slice(13) + Date.now(), color, size, quantity }]
             }, {
                 headers: { Authorization: token }

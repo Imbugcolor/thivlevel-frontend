@@ -14,7 +14,7 @@ function Forgotpassword() {
     
     try {
       setIsSend(false)
-      await axios.post('/user/forgotpassword', {email})
+      await axios.post('https://thivlevel-ecommerce-production.up.railway.app/user/forgotpassword', {email})
       setIsSend(true) 
       toast.success('An email for resetting your password has been sent to your email', {
         position: "top-center",

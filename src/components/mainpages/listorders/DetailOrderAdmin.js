@@ -39,14 +39,14 @@ function DetailOrderAdmin() {
     const HandleSubmitChangeStatus = async () => {
         try {
             if (!detailOrder.isPaid && statusOrder === 'Delivered') {
-                await axios.put(`/api/payment/changestatus/${detailOrder._id}/`, { isPaid: true, status: statusOrder }, {
+                await axios.put(`https://thivlevel-ecommerce-production.up.railway.app/api/payment/changestatus/${detailOrder._id}/`, { isPaid: true, status: statusOrder }, {
                     headers: { Authorization: token }
                 })
                 toast.success('Order is delivered successfully')
                 setCallback(!callback)
                 return;
             }
-            await axios.patch(`/api/payment/changestatus/${detailOrder._id}/`, { status: statusOrder }, {
+            await axios.patch(`https://thivlevel-ecommerce-production.up.railway.app/api/payment/changestatus/${detailOrder._id}/`, { status: statusOrder }, {
                 headers: { Authorization: token }
             })
 
@@ -65,7 +65,7 @@ function DetailOrderAdmin() {
 
     const HandleSubmitAddress = async (address) => {
         try {
-            await axios.patch(`/api/payment/changeaddress/${detailOrder._id}`, { address }, {
+            await axios.patch(`https://thivlevel-ecommerce-production.up.railway.app/api/payment/changeaddress/${detailOrder._id}`, { address }, {
                 headers: { Authorization: token }
             })
 

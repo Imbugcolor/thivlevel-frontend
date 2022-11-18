@@ -22,7 +22,7 @@ function Users() {
     const handleStatus = async (user) => {
         user.status = !user.status
         try {
-            await axios.patch(`/user/changestatus/${user._id}/`, { status: user.status }, {
+            await axios.patch(`https://thivlevel-ecommerce-production.up.railway.app/user/changestatus/${user._id}/`, { status: user.status }, {
                 headers: { Authorization: token }
             })
             if (user.status)

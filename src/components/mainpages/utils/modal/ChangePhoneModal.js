@@ -15,7 +15,7 @@ function ChangePhoneModal({ phoneOrder, callback, setCallback, token }) {
     const handleSaveChangePhone = async (e) => {
         try {
 
-            await axios.patch(`/api/payment/changephonenumber/${phoneOrder._id}`, { newPhone }, {
+            await axios.patch(`https://thivlevel-ecommerce-production.up.railway.app/api/payment/changephonenumber/${phoneOrder._id}`, { newPhone }, {
                 headers: { Authorization: token }
             })
 

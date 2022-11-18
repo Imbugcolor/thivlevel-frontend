@@ -1,9 +1,9 @@
 import React, { createContext, useState, useEffect } from 'react'
-import ProductsAPI from './api/ProductsAPI'
-import UserAPI from './api/UserAPI'
-import CategoriesAPI from './api/CategoriesAPI'
+import ProductsAPI from '.https://thivlevel-ecommerce-production.up.railway.app/api/ProductsAPI'
+import UserAPI from '.https://thivlevel-ecommerce-production.up.railway.app/api/UserAPI'
+import CategoriesAPI from '.https://thivlevel-ecommerce-production.up.railway.app/api/CategoriesAPI'
 import axios from 'axios'
-import OrdersAPI from './api/OrdersAPI'
+import OrdersAPI from '.https://thivlevel-ecommerce-production.up.railway.app/api/OrdersAPI'
 
 export const GlobalState = createContext()
 
@@ -15,7 +15,7 @@ export const DataProvider = ({ children }) => {
         const firstLogin = localStorage.getItem('firstLogin')
         if (firstLogin) {
             const refreshToken = async () => {
-                const res = await axios.get('/user/refresh_token')
+                const res = await axios.get('https://thivlevel-ecommerce-production.up.railway.app/user/refresh_token')
 
                 setToken(res.data.accesstoken)
 

@@ -25,7 +25,7 @@ function VerifyPhoneNumber() {
 
     const handleSendCode = async () => {
         try {
-            await axios.post(`/user/verifyphonenumber/`, { phone }, {
+            await axios.post(`https://thivlevel-ecommerce-production.up.railway.app/user/verifyphonenumber/`, { phone }, {
                 headers: { Authorization: token }
             })
 
@@ -43,7 +43,7 @@ function VerifyPhoneNumber() {
     const handleVerifyPhoneNumber = async (e) => {
         try {
 
-            await axios.post(`/user/verifycodesms/`, { phone, code }, {
+            await axios.post(`https://thivlevel-ecommerce-production.up.railway.app/user/verifycodesms/`, { phone, code }, {
                 headers: { Authorization: token }
             })
 

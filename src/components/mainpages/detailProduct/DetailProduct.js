@@ -67,7 +67,7 @@ function DetailProduct() {
                 position: "top-center",
                 autoClose: 3000
             })
-            const res = await axios.post(`/api/products/${params.id}/review`, { rating, comment }, {
+            const res = await axios.post(`https://thivlevel-ecommerce-production.up.railway.app/api/products/${params.id}/review`, { rating, comment }, {
                 headers: { Authorization: token }
             })
             setCallback(!callback)
