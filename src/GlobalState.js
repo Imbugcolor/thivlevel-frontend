@@ -1,9 +1,9 @@
 import React, { createContext, useState, useEffect } from 'react'
-import ProductsAPI from 'https://thivlevel-ecommerce-production.up.railway.app/api/ProductsAPI'
-import UserAPI from 'https://thivlevel-ecommerce-production.up.railway.app/api/UserAPI'
-import CategoriesAPI from 'https://thivlevel-ecommerce-production.up.railway.app/api/CategoriesAPI'
+import ProductsAPI from './api/ProductsAPI'
+import UserAPI from './api/UserAPI'
+import CategoriesAPI from './api/CategoriesAPI'
 import axios from 'axios'
-import OrdersAPI from 'https://thivlevel-ecommerce-production.up.railway.app/api/OrdersAPI'
+import OrdersAPI from './api/OrdersAPI'
 
 export const GlobalState = createContext()
 
